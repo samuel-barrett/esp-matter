@@ -1686,6 +1686,53 @@ attribute_t *create_occupancy_sensor_type_bitmap(cluster_t *cluster, uint8_t val
 } /* attribute */
 } /* occupancy_sensing */
 
+namespace illuminance_measurement {
+namespace attribute {
+
+attribute_t *create_illuminance_measured_value(cluster_t *cluster, nullable<int16_t> value)
+{
+    return esp_matter::attribute::create(cluster, IlluminanceMeasurement::Attributes::MeasuredValue::Id,
+                                         ATTRIBUTE_FLAG_NULLABLE, esp_matter_nullable_int16(value));
+}
+
+attribute_t *create_illuminance_min_measured_value(cluster_t *cluster, nullable<int16_t> value)
+{
+    return esp_matter::attribute::create(cluster, IlluminanceMeasurement::Attributes::MinMeasuredValue::Id,
+                                         ATTRIBUTE_FLAG_NULLABLE, esp_matter_nullable_int16(value));
+}
+
+attribute_t *create_illuminance_max_measured_value(cluster_t *cluster, nullable<int16_t> value)
+{
+    return esp_matter::attribute::create(cluster, IlluminanceMeasurement::Attributes::MaxMeasuredValue::Id,
+                                         ATTRIBUTE_FLAG_NULLABLE, esp_matter_nullable_int16(value));
+}
+
+} /* attribute */
+} /* illuminance_measurement */
+
+namespace relative_humidity_measurement {
+namespace attribute {
+
+    attribute_t *create_relative_humidity_measured_value(cluster_t *cluster, nullable<int16_t> value)
+    {
+        return esp_matter::attribute::create(cluster, RelativeHumidityMeasurement::Attributes::MeasuredValue::Id,
+                                            ATTRIBUTE_FLAG_NULLABLE, esp_matter_nullable_int16(value));
+    }
+
+    attribute_t *create_relative_humidity_min_measured_value(cluster_t *cluster, nullable<int16_t> value)
+    {
+        return esp_matter::attribute::create(cluster, RelativeHumidityMeasurement::Attributes::MinMeasuredValue::Id,
+                                            ATTRIBUTE_FLAG_NULLABLE, esp_matter_nullable_int16(value));
+    }
+
+    attribute_t *create_relative_humidity_max_measured_value(cluster_t *cluster, nullable<int16_t> value)
+    {
+        return esp_matter::attribute::create(cluster, RelativeHumidityMeasurement::Attributes::MaxMeasuredValue::Id,
+                                            ATTRIBUTE_FLAG_NULLABLE, esp_matter_nullable_int16(value));
+    }
+} /* attribute */
+} /* illuminance_measurement */
+
 namespace boolean_state {
 namespace attribute {
 

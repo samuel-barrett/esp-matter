@@ -383,6 +383,42 @@ typedef struct config {
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
 } /* occupancy_sensing */
 
+namespace illuminance_measurement {
+typedef struct config {
+    uint16_t cluster_revision;
+    nullable<int16_t> measured_value;
+    nullable<int16_t> min_measured_value;
+    nullable<int16_t> max_measured_value;
+    config() : cluster_revision(4), measured_value(), min_measured_value(), max_measured_value() {}
+} config_t;
+
+cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
+} /* illuminance_measurement */
+
+namespace relative_humidity_measurement {
+typedef struct config {
+    uint16_t cluster_revision;
+    nullable<int16_t> measured_value;
+    nullable<int16_t> min_measured_value;
+    nullable<int16_t> max_measured_value;
+    config() : cluster_revision(4), measured_value(), min_measured_value(), max_measured_value() {}
+} config_t;
+
+cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
+} /* relative_humidity_measurement */
+
+namespace pressure_measurement {
+typedef struct config {
+    uint16_t cluster_revision;
+    nullable<int16_t> measured_value;
+    nullable<int16_t> min_measured_value;
+    nullable<int16_t> max_measured_value;
+    config() : cluster_revision(4), measured_value(), min_measured_value(), max_measured_value() {}
+} config_t;
+
+cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
+}
+
 namespace boolean_state {
 typedef struct config {
     uint16_t cluster_revision;
