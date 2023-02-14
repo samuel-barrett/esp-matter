@@ -13,7 +13,7 @@ Espressif's SDK for Matter is the official Matter development framework for ESP3
 Please clone this repository using the below command:
 
 ```
-git clone --recursive https://github.com/espressif/esp-matter.git
+git clone --recursive https://github.com/samuel-barrett/esp-matter.git
 ```
 
 > Note the --recursive option. This is required to pull in the various dependencies into esp-matter. In case you have already cloned the repository without this option, execute this to pull in the submodules: `git submodule update --init --recursive`
